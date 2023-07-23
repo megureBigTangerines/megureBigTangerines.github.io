@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="theme-color" content=#58b77a>
+  <meta name="theme-color" content=#E67A5E>
   <title>BigTangerines</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="大橘子">
@@ -27,7 +27,7 @@
 
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/css/main.min.css">
-  
+  <link rel="stylesheet" href="/css/custom.css">
   <style type="text/css">
     pre,
     code {
@@ -66,11 +66,11 @@
 <div id="page">
 
 <div class="header">
-  <div id="lx-aside" style="background-image: url(https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/images/cover.min.jpeg)">
+  <div id="lx-aside" style="background-image: url(/images/bigcover.jpg)">
     <div class="overlay">
       
       <div class="featured">
-        <div class="avatar"><a href="/"><img src="https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/images/avatar.min.jpeg" alt="大橘子"></a></div>
+        <div class="avatar"><a href="/"><img src="/images/user.jpg" alt="大橘子"></a></div>
         <span>大橘子</span>
         <h1>BigTangerines</h1>
         
@@ -82,6 +82,85 @@
 <div id="lx-main-content">
   <div class="lx-post">
 
+  <div class="lx-entry padding">
+    <div>
+      <h2 class="title"><a href="/2023/07/20/2023.7.18/"></a></h2>
+      <span class="lx-post-detail"><i class="fa fa-calendar-o"></i> 2023-07-20</span>
+      <p><p>①<strong>border-bottom</strong>用来设置元素底部边框样式的属性（可以定义边框的宽度，样式和颜色）。</p>
+<p>②<strong>button和input</strong>在默认情况下是行内元素，会根据内容自动换行。可以通过<strong>display</strong>属性来改变它们的显示行为。</p>
+<p>   1.<strong>display:block;</strong></p>
+<p>   2.<strong>display:inline-block</strong>;（转为行内块元素）</p>
+<p>③<strong>button</strong>默认自带边框，需要手动去除边框。（border:0;）</p>
+<p>④<strong>line-height</strong>用来设置元素行高（行间距）：</p>
+<p>​    1.<strong>line-height:1.5</strong>( 表示行高为字体大小的1.5倍)</p>
+<p>​    2.<strong>line-height:24px</strong>(表示行高为24像素)</p>
+<p>​    3.<strong>line-height:150%</strong>(表示行高为字体大小的150%)</p>
+<p>⑤**display:flex;**用于创建弹性布局。</p>
+<p>​    使用弹性布局可以实现以下特性：</p>
+<ol>
+<li><code>自适应宽度</code>：弹性容器的子元素会自动根据可用空间进行伸缩，以填满容器的宽度。</li>
+<li><code>水平和垂直居中</code>：弹性容器可以轻松实现子元素的水平和垂直居中对齐。</li>
+<li><code>弹性布局属性</code>：通过设置其他弹性布局属性，如 <code>flex-direction</code>、<code>justify-content</code>、<code>align-items</code> 等，可以更精确地控制子元素的排列和对齐方式。</li>
+<li><strong>justify-content:center</strong>用于水平对齐弹性容器内的子元素。<strong>justify-content</strong>其它不同的水平对齐方式：<ul>
+<li><code>flex-start</code>：子元素在弹性容器的起始位置对齐。</li>
+<li><code>flex-end</code>：子元素在弹性容器的末尾位置对齐。</li>
+<li><code>space-between</code>：子元素在弹性容器内均匀分布，并且第一个子元素在起始位置，最后一个子元素在末尾位置。</li>
+<li><code>space-around</code>：子元素在弹性容器内均匀分布，两侧留有相等的空白空间。</li>
+</ul>
+</li>
+</ol>
+<p>⑥<strong>vh</strong>：是一个相对单位长度，表示视窗（viewport）的高度的百分比，能够使元素的大小相对于视窗的高度进行调整。</p>
+<p>⑦<strong>过渡效果：transition:all .3s</strong></p>
+<p>   表示应用过渡效果到所有的css属性上，包括尺寸，颜色，背景，边框等等。而“.3s”表示过渡的持续时间。</p>
+<p>⑧<strong>position</strong>用来控制元素的定位方式：</p>
+<p>   <strong>定位&#x3D;定位模式＋边偏移</strong>（边偏移决定了该元素的最终位置）</p>
+<ol>
+<li><p><code>static</code>（静态定位）：按照标准流摆放位置，它没有边偏移，很少被使用到。</p>
+</li>
+<li><p><code>relative</code>（相对定位）：相对于它原来的位置来进行位置移动的，虽然它移动走了，<u>但原来的位置继续保留</u>，后面的盒子仍然以标准型来对待它（自恋型）。</p>
+</li>
+<li><p><code>absolute</code>（绝对定位）：相对于其祖先元素来进行元素移动位置的。</p>
+<p><strong>特点：</strong></p>
+<p>（1）如果没有祖先元素或者祖先元素没有定位，则以浏览器为准定位；</p>
+<p>（2）如果祖父元素有定位（相对，绝对，固定定位），则以最近一级的<u>有定位</u>的祖先元素为参考点进行移动位置。(爸爸有定位就以爸爸为主，若爸爸没有定位但爷爷有，就以爷爷为主)；</p>
+<p>（3）<u>原先的位置不再被占有</u>(脱离标准流)。</p>
+</li>
+<li><p><code>fixed</code>（固定定位）：【是一种特殊的绝对定位】固定于浏览器可视区的位置。主要使用场景：可以在浏览器页面滚动时元素的位置不会改变。</p>
+<p><strong>特点</strong></p>
+<p>（1）以浏览器的可视窗口为参考点移动元素；</p>
+<ul>
+<li><p>跟父元素没有任何关系</p>
+</li>
+<li><p>不随滚动条滚动</p>
+</li>
+</ul>
+<p>（2）固定定位不再占有原来的位置（位置不保留）。</p>
+</li>
+<li><p><code>sticky</code>（粘性定位）：相对定位和固定定位的混合。</p>
+<p><strong>特点</strong></p>
+<ul>
+<li>以浏览器的可视窗口为参照点移动元素</li>
+</ul>
+<h2 id="子级使用绝对定位，父级则需要使用相对定位"><a href="#子级使用绝对定位，父级则需要使用相对定位" class="headerlink" title="子级使用绝对定位，父级则需要使用相对定位"></a>子级使用绝对定位，父级则需要使用相对定位</h2><ul>
+<li>子级绝对定位，不会占有位置，可以放到父盒子里的任何一个地方，不会影响到其它的兄弟盒子；</li>
+<li>父盒子需要加定位限制子盒子在父盒子内显示；</li>
+<li>父盒子布局时，需要占有位置，因此父盒子只能是相对定位。</li>
+</ul>
+</li>
+</ol>
+<p><strong>边偏移有4个属性：</strong>top,bottom,left,right</p>
+</p>
+      <div class="post-button"><a class="btn" href="/2023/07/20/2023.7.18/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>阅读更多</a></div>
+    </div>
+  </div>
+  <div class="lx-entry padding">
+    <div>
+      <h2 class="title"><a href="/2023/07/20/My-New-Post/">My New Post</a></h2>
+      <span class="lx-post-detail"><i class="fa fa-calendar-o"></i> 2023-07-20</span>
+      <p></p>
+      <div class="post-button"><a class="btn" href="/2023/07/20/My-New-Post/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>阅读更多</a></div>
+    </div>
+  </div>
   <div class="lx-entry padding">
     <div>
       <h2 class="title"><a href="/2023/07/20/hello-world/">Hello World</a></h2>
@@ -128,7 +207,7 @@
       <div class="col">
         <div class="row for-pic">
           <div class="profile-pic">
-            <a href="/"><img src="https://cdn.jsdelivr.net/npm/theme-lx@0.4.4/source/dist/images/avatar.min.jpeg" alt="大橘子"/></a>
+            <a href="/"><img src="/images/user.jpg" alt="大橘子"/></a>
           </div>
         </div>
         <div class="row for-name">
@@ -142,7 +221,10 @@
   <ul class="menu-items">
     <li><a href="/"><i class="fa fa-home fa-fw"></i>首页</a></li>
     <li><a href="/archives/"><i class="fa fa-archive fa-fw"></i>归档</a></li>
-    
+    <li class="has-sub"><span class="dropdown-heading">
+      <i class="fa fa-th-list fa-fw"></i>分类</span>
+        
+    </li>
     <li class="has-sub"><span class="dropdown-heading">
       <i class="fa fa-bookmark fa-fw"></i>页面</span>
         <ul>
